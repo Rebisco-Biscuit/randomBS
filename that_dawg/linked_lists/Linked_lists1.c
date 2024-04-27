@@ -22,3 +22,7 @@ Expected Output :
  Data = 6                                                                                                     
  Data = 7 
  */
+
+int main(void) {
+  return 0;  
+}
