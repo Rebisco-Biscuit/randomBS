@@ -27,47 +27,73 @@ Expected Output :
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node {
- 	int num;
-	struct node *link;
+struct node {
+    int num;
+    struct node *link;
 } *node1;
 
 void createNode(int);
 void display();
 
-int main (){
-	int size;
+int main() {
+    int size;
+    
+    printf("Enter node size: ");
+    scanf("%d", &size);
+    
+    if(size <=0){
+        printf("Cannot create a size of %d list.", size);
+    } else {
+        createNode(size);
+        display();
+    }
 
-	printf("Input the number of nodes: );
-	scanf("%d", &size);
-
-	createNode(size);
-	diplay();
+    return 0;
 }
 
-void createNode(int size){
-	struct node *head, *current, *newNode;
-	int num;
+void createNode(int n){
+    struct node *newNode, *tmp;
+    int num;
+    
+    node1 = malloc(sizeof(struct node));
+    
+    if(node1==NULL){
+        printf("Memory allocation failed.");
+    } else {
+        printf("Enter data for node 1: ");
+        scanf("%d", &num);
+        
+        node1->num=num;
+        node1->link=NULL;
+        
+        tmp=node1;
+        
+        for(int i=2; i<=n; i++){
+            newNode=malloc(sizeof(struct node));
+            
+            printf("Enter data for node %d: ", i);
+            scanf("%d", &num);
+            
+            newNode->num=num;
+            newNode->link=NULL;
+            
+            tmp->link=newNode;
+            tmp=tmp->link;
+        }
+    }
+}
 
-	if(head==NULL){
-		printf("Cannot create an empty list.");
-	} else {
-		head=malloc(sizeof(struct node));
-	}
-
-	printf("Input data for node 1: ");
-	scanf("%d", &num);
-
-	head->num = num;
-	head->link=NULL;
-	current=head;
-
-	for(int i=2; i<size; i++){
-		newNode=malloc(sizeof(struct node));
-		
-		printf("Input data for node %d", i);
-		scanf("%d", &num);
-
-		newNode->num = num;
-		newNode->link = NULL;
-
+void display(){
+    struct node *tmp;
+    
+    if(node1==NULL){
+        printf("List is empty.");
+    } else {
+        tmp=node1;
+        
+        while(tmp!=NULL){
+            printf("Data = %d\n", tmp->num);
+            tmp=tmp->link;
+        }
+    }
+}
