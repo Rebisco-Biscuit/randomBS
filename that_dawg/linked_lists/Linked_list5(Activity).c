@@ -33,6 +33,10 @@ int main() {
     createNode(3);
     printf("\n\nInfo:\n");
     display();
+    
+    transfer();
+    printf("\n\nNew Info:\n");
+    display();
 
     return 0;
 }
@@ -65,6 +69,7 @@ void createNode(int n){
   
   for(int i=1; i<n; i++){
       newNode=malloc(sizeof(struct node));
+        printf("\n");
       
     //   printf("Enter fname: ");
     //   scanf(" %s", newNode->data.personName.fname);
@@ -131,7 +136,7 @@ void transfer(){
         if(temp->data.idNum == idTo){
             temp->data.balance=((temp->data.balance)+amt);
         }
-        if(temp->data.idNum == idTo){
+        if(temp->data.idNum == id){
             temp->data.balance=((temp->data.balance)-amt);
         }
         temp=temp->next;
