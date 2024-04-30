@@ -29,7 +29,11 @@ void display();
 void transfer();
 
 int main() {
-    
+    while(1){
+        printf("1. Populate");
+        printf("2. Transfer");
+        printf("3. Delete");
+    }
     createNode(3);
     printf("\n\nInfo:\n");
     display();
