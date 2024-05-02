@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct {
     char fname[20];
@@ -25,24 +26,89 @@ struct node {
 } *Node;
 
 void createNode(int);
+int countNode();
+void insertEnd();
 void display();
 void transfer();
 
 int main() {
-    while(1){
-        printf("1. Populate");
-        printf("2. Transfer");
-        printf("3. Delete");
-    }
-    createNode(3);
-    printf("\n\nInfo:\n");
-    display();
+    int opt, totalNodes=0, n;
     
-    transfer();
-    printf("\n\nNew Info:\n");
-    display();
+    while(1){
+        printf("1. Populate\n");
+        printf("2. Transfer\n");
+        printf("3. View List\n");
+        printf("4. Delete\n");
+        printf("5. Exit\n");
+        
+        printf("\nEnter choice: ");
+        scanf("%d", &opt);
+        
+        switch(opt){
+            case 1:
+                totalNodes=countNode();
+                if(totalNodes == false){
+                    printf("\nEnter nodes to create: ");
+                    scanf("%d", &n);
+                    if(n<=0){
+                        printf("Cannot create %d nodes.\n\n", n);
+                    } else {
+                        createNode(n);
+                        printf("\nNodes created successfully.\n\n");
+                    }
+                } else {
+                    insertEnd();
+                    printf("\nAdded successfully.\n\n");
+                }
+                break;
+            case 2:
+                transfer();
+                printf("\nTransferred successfully.\n\n");
+                break;
+            case 3:
+                display();
+                printf("\n");
+                break;
+            case 4:
+                //delete
+                break;
+            case 5:
+                return 0;
+        }
+    }
 
     return 0;
+}
+
+void insertEnd(){
+    struct node *temp, *newNode;
+    
+    newNode=malloc(sizeof(struct node));
+    
+    printf("Enter balance: ");
+    scanf("%d", &newNode->data.balance);
+      
+    printf("Enter id number: ");
+    scanf("%d", &newNode->data.idNum);
+    
+    temp=Node;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=newNode;
+}
+
+int countNode(){
+    struct node *temp;
+    int ctr;
+    
+    temp=Node;
+    
+    while(temp!=NULL){
+        temp=temp->next;
+        ctr++;
+    }
+    return ctr;
 }
 
 void createNode(int n){
@@ -62,7 +128,7 @@ void createNode(int n){
 //   printf("Enter year: ");
 //   scanf("%d", &Node->data.expiryDate.year);    
   
-  printf("Enter balance: ");
+  printf("\nEnter balance: ");
   scanf("%d", &Node->data.balance);
   
   printf("Enter id number: ");
@@ -99,6 +165,7 @@ void createNode(int n){
       temp->next=newNode;
       temp=temp->next;
   }
+  printf("\n");
 }
 
 void display(){
