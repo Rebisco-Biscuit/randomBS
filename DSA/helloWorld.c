@@ -1,5 +1,3 @@
-// printf("hello world");
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -126,4 +124,3 @@ void insertNode(struct node **head, struct node **tail, int data) {
         *tail = newNode;
     }
 }
-
