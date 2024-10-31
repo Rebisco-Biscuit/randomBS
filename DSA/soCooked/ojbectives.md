@@ -1,13 +1,13 @@
-#**IM SO COOKED JFC LMAO**#
+#**IM SO COOKED JFC LMAO**
 
-##anyway...##
+## anyway...
 ***
-###***Achievements:**###
+### **Achievements:**
   - successfully created insert
   - nodes can have their previous links
   - still learning insert at pos
 
-###**Sajested objectives:**###
+### **Sajested objectives:**
   - Insert at Position: Write a function that inserts a node at any specific position in the list. This requires traversing the list and adjusting pointers at the insertion point.
   - Delete from Position: Similar to insertion, try deleting a node from any position in the list. Practice handling edge cases, like deleting from the head or tail.
   - Reverse the List: Create a function to reverse the linked list by switching the next and previous pointers. Practice updating head and tail as well.
