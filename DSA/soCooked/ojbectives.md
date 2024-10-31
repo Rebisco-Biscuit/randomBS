@@ -1,8 +1,8 @@
-### **IM SO COOKED JFC LMAO**
+# **IM SO COOKED JFC LMAO**
 
-### anyway...
+#### anyway...
 
-# **Achievements:**
+### **Achievements:**
   - successfully created insert
   - nodes can have their previous links
   - still learning insert at pos
@@ -16,4 +16,4 @@
   - Remove Duplicates: If you allow duplicates in your list, write a function to remove them.
   - Merge Two Lists: Try merging two sorted linked lists into a single sorted list without using extra space.
 
-ALL OF THESE SHOULD BE DONE.
+ALL OF THESE SHOULD BE DONE. ~~otherwise my lord Aizen would be disappointed and I don't want that </3~~
