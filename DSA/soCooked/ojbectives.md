@@ -1,8 +1,8 @@
-#**IM SO COOKED JFC LMAO**
+###**IM SO COOKED JFC LMAO**
 
-## anyway...
-***
-### **Achievements:**
+### anyway...
+**
+# **Achievements:**
   - successfully created insert
   - nodes can have their previous links
   - still learning insert at pos
